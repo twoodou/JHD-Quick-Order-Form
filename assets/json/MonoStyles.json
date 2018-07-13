@@ -1,0 +1,35 @@
+{
+    "MonoStyles": [
+        {
+            "allMonoStyles": {
+                "None": "394",
+                "Hot Stamp": "235",
+                "Gold Foil": "237",
+                "Silver Foil": "236",
+                "Traditional Hot Stamp": "304",
+                "Traditional Gold Foil": "305",
+                "Traditional Silver Foil": "306"
+            },
+            "noHotStamps": {
+                "None": "394",
+                "Gold Foil": "237",
+                "Silver Foil": "236",
+                "Traditional Gold Foil": "305",
+                "Traditional Silver Foil": "306"
+            },
+            "onlyHotStamps": {
+                "None": "394",
+                "Hot Stamp": "235",
+                "Traditional Hot Stamp": "304"
+            },
+            "bocaChica": {
+                "None": "394",
+                "Gold Foil": "237",
+                "Traditional Gold Foil": "305"
+            },
+            "noMonoStyle": {
+                "None": "394"
+            }
+        }
+    ]
+}

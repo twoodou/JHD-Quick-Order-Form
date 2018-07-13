@@ -1,0 +1,91 @@
+{
+    "Colors": [
+        {
+            "vinylColors": {
+                "Black": "106",
+                "Burgundy": "108",
+                "Game Guard Camo": "184",
+                "Charcoal": "433",
+                "Coral": "110",
+                "Espresso": "111",
+                "French Blue": "112",
+                "Lilac": "354",
+                "Mint": "123",
+                "Moss": "411",
+                "Navy": "116",
+                "Ocean Blue": "117",
+                "Purple": "118",
+                "Red": "119",
+                "Rose": "420",
+                "Saddle": "120",
+                "Slate": "121",
+                "Tan": "122"
+            },
+
+            "leatherColors": {
+                "Black": "140",
+                "Bridle": "141",
+                "Caribbean": "142",
+                "Cherry": "143",
+                "Hot Pink": "145",
+                "Iris": "432",
+                "Kiwi": "144",
+                "Mahogany": "139",
+                "Natural": "138",
+                "Orange": "133",
+                "Pistachio": "329",
+                "Plum": "132",
+                "Royal Blue": "131",
+                "Salmon": "137",
+                "Shamrock": "134",
+                "Steel": "136",
+                "Wine": "135"
+            },
+
+            "huntingItemColors": {
+                "Black": "106",
+                "Espresso": "111",
+                "Game Guard Camo": "184",
+                "Khaki": "375",
+                "Olive": "266",
+                "Moss": "411",
+                "Saddle": "120",
+                "Tan": "122"
+            },
+            "sandPrintedLiningColor": {
+                "Sand Printed Lining": "243"
+            },
+
+            "womensLeatherColors": {
+                "Amber": "186",
+                "Blonde": "185",
+                "Champagne": "353",
+                "Stout": "187"
+            },
+
+            "bocaChicaColors": {
+                "Black": "335",
+                "Coral": "338",
+                "Mint": "345",
+                "Ocean Blue": "347",
+                "Slate": "351"
+            },
+            "clearBackpackColors": {
+                "Black": "106",
+                "Lilac": "354",
+                "Mint": "123",
+                "Rose": "420",
+                "Saddle": "120",
+                "Slate": "351"
+            },
+            "bridleMahogany": {
+                "Bridle": "141",
+                "Mahogany": "139"
+            },
+            "khakiOlive": {
+                "Khaki": "375",
+                "Olive": "266"
+            }
+        }
+    ]
+}

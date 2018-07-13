@@ -1,0 +1,33 @@
+{
+    "Symbols": [
+        {
+            "allSymbols": {
+                "None": "415",
+                "Anchor": "235",
+                "Arrow": "213",
+                "Cross": "218",
+                "Crown": "219",
+                "Deer Head": "220",
+                "Dolphin": "221",
+                "Fleur De Lis": "223",
+                "Heart": "224",
+                "Infinity": "225",
+                "Jon Hart Logo": "395",
+                "Kite": "227",
+                "Old Key": "228",
+                "Owl": "229",
+                "Shamrock": "231",
+                "Shell": "232",
+                "Texas": "233",
+                "Texas Star": "234"                
+            },
+            "noSymbols": {
+                "None": "415"
+            },
+            "logoOnly": {
+                "None": "415",
+                "Jon Hart Logo": "395"
+            }
+        }
+    ]
+}
