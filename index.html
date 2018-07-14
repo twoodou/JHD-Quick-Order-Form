@@ -42,7 +42,31 @@
       $("#svgIncludes").load("./assets/svg/svgdefs.svg");
     });
   </script>
+<style type="text/css">button, input, option, form, select {
+		/*border-radius: 10px/30px !important;*/
+		border-radius: 15px !important;
+	} header, .header__top, .container__header-contents, .pagewrap { border-radius: 15px;
+	} header { 
+		margin-bottom: 0px !important;
+	}
+		.pagewrap {
+		width: 100%;
+		margin: 0 auto;
+		background-color: #baabbd;
+		
 
+	} form {
+		background-color: #c9c9ee;
+	} .form-group.row {
+		padding-left: 10px;
+		padding-right: 10px;
+	} #input-code, #input-price {
+		width:55%;
+	} .btn {
+		margin-bottom: 10px !important;
+	}
+
+</style>
 </head>
 
 <body>
@@ -131,12 +155,10 @@
       </div>
     </div>
     <!-- /.container -->
-    <hr>
-    <hr>
   </header>
 
   <!-- Form Container Start -->
-  <div class="pagewrap container col-md-6" style="padding-top:15px">
+  <div class="pagewrap container" style="padding-top:15px">
     <h1 style="text-align:center">Quick-Order Form</h1>
     <form id="qo-form" style="padding-top:15px;">
 
@@ -193,7 +215,7 @@
       </div>
       <div class="form-group row">
         <div class="col-sm-10">
-          <button type="submit" id="quick-order-submit" class="btn btn-primary">Place Order</button>
+          <button type="submit" id="quick-order-submit" class="btn placeOrderBtn" style="color: white; background-color:#54320b;border-radius:1px;">Place Order</button>
         </div>
       </div>
     </form>
