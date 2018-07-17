@@ -55,6 +55,9 @@
             "sandPrintedLiningColor": {
                 "Sand Printed Lining": "243"
             },
+            "blackLiningColor": {
+                "Black JH Print": "242"
+            },
 
             "womensLeatherColors": {
                 "Amber": "186",
@@ -85,6 +88,22 @@
             "khakiOlive": {
                 "Khaki": "375",
                 "Olive": "266"
+            },
+            "JHDoppKitColorsLeather": {
+                "Bourbon": "189",
+                "Midnight": "190"
+            },
+            "joeDuffelColors": {
+                "Bridle": "141"
+            },
+            "highlandParkToteColors": {
+                "Black with Saddle Sides": "366",
+                "Burgundy with Saddle Sides": "372",
+                "Coral with Navy Sides": "364",
+                "Espresso with Saddle Sides": "373",
+                "Mint with Coral Sides": "363",
+                "Mint with Navy Sides": "368",
+                "Slate with Black Sides": "367"
             }
         }
     ]
