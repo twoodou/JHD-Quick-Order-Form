@@ -32,10 +32,9 @@
   <meta name="msapplication-TileColor" content="#da532c">
 
   <title>JHD Retailer Quick-Order Form</title>
-  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-         rel = "stylesheet">
-      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
   <script>
     $(function () {
@@ -43,6 +42,7 @@
     });
   </script>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 </head>
 
 <body>
@@ -136,67 +136,128 @@
   <!-- Form Container Start -->
   <div class="pagewrap container" style="padding-top:15px">
     <h1 style="text-align:center;color:#54320b;padding-bottom:10px;">Quick-Order Form</h1>
-    <form id="qo-form" style="padding-top:15px;">
+    <div id="step1">
+      <form id="step1-form">
+          <div class="form-group row">
+        <div class="col-md-12">
+          <label for="input-companyName">Company Name</label>
+          <input id="input-companyName" class="form-control" placeholder="" required>
+        </div>
+        </div>
+        <div class="form-group row">
+        <div class="col-md-12">
+          <label for="input-PO">P.O. Number</label>
+          <input id="input-PO" class="form-control" placeholder="" required>
+        </div>
+        </div>
+        <div class="form-group row">
+        <div class="col-sm-12">
+          <button type="button" id="step1-submit" class="btn placeOrderBtn" style="background-color: white; color:#54320b;border-radius:1px;">Submit</button>
+        </div>
+        </div>
+      </form>
+    </div>
 
-      <div class="form-group row">
-        <div class="col-md-12">
-          <label for="input-item">Item Name</label>
-          <input id="input-item" class="form-control" placeholder="">
+    <div id="step2">
+
+      <form id="qo-form" style="padding-top:15px;">
+
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label for="input-item">Item Name</label>
+            <input id="input-item" class="form-control" placeholder="">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-8">
-          <label for="input-code">Item Code</label>
-          <input id="input-code" class="form-control" disabled="true">
+        <div class="form-group row">
+          <div class="col-md-8">
+            <label for="input-code">Item Code</label>
+            <input id="input-code" class="form-control" disabled="true">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-8">
-          <label for="input-price">Item Price</label>
-          <input id="input-price" class="form-control" disabled="true">
+        <div class="form-group row">
+          <div class="col-md-8">
+            <label for="input-price">Item Price</label>
+            <input id="input-price" class="form-control" disabled="true">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <label for="input-color">Color</label>
-          <!-- <input type="text" id="input-color" class="form-control" placeholder=""> -->
-          <select id="input-color" class="custom-select input-color form-control" required>
-          </select>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label for="input-color">Color</label>
+            <!-- <input type="text" id="input-color" class="form-control" placeholder=""> -->
+            <select id="input-color" class="custom-select input-color form-control" required>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <label for="input-monoStyle">Monogram Style</label>
-          <select id="input-monoStyle" class="custom-select input-monoStyle form-control" required>
-            <option value="394">None</option>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label for="input-monoStyle">Monogram Style</label>
+            <select id="input-monoStyle" class="custom-select input-monoStyle form-control" required>
+              <!-- <option value="394">None</option>
             <option value="235">Hot Stamp [+ $10.00]</option>
             <option value="237">Gold Foil [+ $10.00]</option>
             <option value="236">Silver Foil [+ $10.00]</option>
             <option value="304">Traditional Hot Stamp [+ $10.00]</option>
             <option value="305">Traditional Gold Foil [+ $10.00]</option>
-            <option value="306">Traditional Silver Foil [+ $10.00]</option>
-          </select>
+            <option value="306">Traditional Silver Foil [+ $10.00]</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label for="input-symbol">Symbol</label>
+            <select id="input-symbol" class="custom-select input-symbol form-control" required>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label for="input-personalization">Personalization Text</label>
+            <input type="text" id="input-personalization" class="form-control" placeholder="">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label for="input-quantity">Quantity</label>
+            <input type="number" id="input-quantity" class="form-control" placeholder="" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" id="quick-order-add" class="btn placeOrderBtn" style="background-color: white;color:#54320b;border-radius:1px;">Add Item to Cart</button>
+          </div>
+        </div>
+      </form>
+    <hr>
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="panel-heading">
+          <h3 class="panel-title">
+            <strong>Order Details</strong>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover" id='order-table'>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Item Name</th>
+                <th>Item Code</th>
+                <th>Color</th>
+                <th>Monogram Style</th>
+                <th>Symbol</th>
+                <th>Personalization Text</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <label for="input-symbol">Symbol</label>
-          <select id="input-symbol" class="custom-select input-symbol form-control" required>
-          </select>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <label for="input-personalization">Personalization Text</label>
-          <input type="text" id="input-personalization" class="form-control" placeholder="">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" id="quick-order-submit" class="btn placeOrderBtn" style="color: white; background-color:#54320b;border-radius:1px;">Place Order</button>
-        </div>
-      </div>
-    </form>
+      <button type="submit" id="finalOrderBtn" class="btn" style="color: white;background-color:#54320b;border-radius:1px;">Place Order</button>
+    </div>
+
   </div>
   <!-- Form Container End -->
 

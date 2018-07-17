@@ -25,7 +25,7 @@ header {
 }
 
 form {
-    background-color: #6B6152;
+    background-color: #52300b;
     color: #fff;
 }
 
@@ -41,4 +41,23 @@ form {
 
 .btn {
     margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.panel {
+    border-radius: 15px;
+    border-color: #52300b;
+}
+
+#panel-heading {
+    background-color: #52300b;
+    border-radius: 15px;
+    color: #fff;
+}
+
+#step1 {
+    background-color: #52300b;
+    border-radius: 15px;
+    color: #fff;
+    padding-top: 15px;
 }
