@@ -25,7 +25,8 @@ header {
 }
 
 form {
-    background-color: #52300b;
+    /* background-color: #52300b; */
+    background-image: url(https://www.jonhartdesign.com/v/vspfiles/templates/jonHartRes/images/template/footer-bg.jpg);
     color: #fff;
 }
 
@@ -50,14 +51,21 @@ form {
 }
 
 #panel-heading {
-    background-color: #52300b;
+    /* background-color: #52300b; */
+    background-image: url(https://www.jonhartdesign.com/v/vspfiles/templates/jonHartRes/images/template/footer-bg.jpg);
     border-radius: 15px;
     color: #fff;
 }
 
 #step1 {
-    background-color: #52300b;
+    /* background-color: #52300b; */
+    background-image: url(https://www.jonhartdesign.com/v/vspfiles/templates/jonHartRes/images/template/footer-bg.jpg);
     border-radius: 15px;
     color: #fff;
     padding-top: 15px;
+}
+
+#qo-form {
+    padding-top: 15px;
+    padding-bottom: 1px;
 }

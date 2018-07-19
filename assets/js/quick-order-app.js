@@ -1,6 +1,6 @@
   var itemNo = 0;
   var key;
-//   var recentKey;
+  //   var recentKey;
   var uniqueIdentifier;
   var jsonData;
   var availableProducts = [];
@@ -20,17 +20,76 @@
 
   var orderData = firebase.database();
 
-  $(document).ready(function () {
+  var traditionalSelected = false;
 
-      $("#input-item").on("autocompleteselect change blue keyup click", function () {
+  $(document).ready(function () {
+      //   Monogram Style Dropdown =-=-=-=-=-=-=-=-=-
+      $("#input-monoStyle").on("change select", function () {
+          var optionValue = $(this).val();
+          if (optionValue == 304 || optionValue == 305 || optionValue == 306) {
+              traditionalSelected = true;
+              $("#input-personalization").attr("maxlength", 3).prop("disabled", false);
+              $("#input-personalization").val("");
+              $("#input-symbol").prop("disabled", false);
+          } else if (optionValue == 394) {
+              console.log("EVENT - 'NONE' Mono Style Selected");
+              traditionalSelected = false;
+              $("#input-personalization").val("");
+              $("#input-personalization").prop("disabled", true);
+              $("#input-symbol").prop("disabled", true);
+          } else {
+              traditionalSelected = false;
+              $("#input-personalization").attr("maxlength", 3).prop("disabled", false);
+              $("#input-personalization").val("");
+              $("#input-symbol").prop("disabled", false);
+          }
+      });
+
+      //   Symbol Input =-=-=-=-=-=-=-=--=-=-=-=-==-=-
+      $("#input-symbol").on("change", function () {
+          var optionValue = $(this).val();
+          var monoStyleOption = $("#input-monoStyle").val();
+          var personalizationText = $("#input-personalization").val();
+          if (optionValue == 415 && monoStyleOption != 394) {
+              $("#input-personalization").prop("disabled", false);
+          } else {
+              $("#input-personalization").val("");
+              $("#input-personalization").prop("disabled", true);
+          }
+      });
+
+      //   Personalization Text Input =-=-=-=-=-=-=-=-
+      $("#input-personalization").on("change keyup", function () {
+          var optionValue = $(this).val();
+          var lettersUsed = parseInt(optionValue.length);
+          if (lettersUsed > 0) {
+              console.log(lettersUsed);
+              $("#input-symbol").prop("disabled", true);
+              if (traditionalSelected === true) {
+                  $("#input-personalization").val(optionValue.toUpperCase());
+              }
+          } else {
+              $("#input-symbol").prop("disabled", false);
+          }
+          // console.log(lettersUsed + " letters used");
+          //   var UPs = optionValue.replace(/[^A-Z]/g, "").length;
+          //   var size = (UPs > 2 ? sizes[1] : sizes[0]);
+      });
+
+      $("#input-item").on("select autocompleteselect change blur keyup", function () {
           var itemName = $(this).val();
           lookupItemCode(itemName);
       });
+
+      $("#quick-order-reset").on("click", function () {
+          loadDefaultOptions();
+      });
+
       $("#step2").hide();
 
       $("#step1-submit").on("click", function () {
-          if ($("#input-companyName").val() && $("#input-companyName").val()) {
-              var randomNumber = Math.floor(Math.random() * 1000000);
+          if ($("#input-companyName").val() && $("#input-PO").val()) {
+              const randomNumber = Math.floor(Math.random() * 1000000);
               var companyName = $("#input-companyName").val();
               var poNumber = $("#input-PO").val();
               uniqueIdentifier = companyName + "-" + poNumber + "-" + randomNumber;
@@ -40,16 +99,11 @@
                   poNumber: poNumber
               };
               var newDB = orderData.ref().child("orders").push(newPO);
-              //   .then((snap) => {
-              //     //   console.log("SNAP: " + snap);
-              //       key = snap;
-              //       $("#step2").show();
-              //   });
               key = newDB.key;
               console.log("KEY: " + newDB.key);
-              //   console.log(key.key);
               $("#step1").hide();
               $("#step2").show();
+              loadDefaultOptions();
               getFirstJSON();
           } else {
               alert("Please input Company Name and PO Number to continue.");
@@ -89,29 +143,37 @@
           var recentKey = newOrderObject.key;
           getFirebaseData(recentKey);
 
-          console.log(newOrder.itemName);
-          console.log(newOrder.itemCode);
-          console.log(newOrder.itemPrice);
-          console.log(newOrder.itemColor);
-          console.log(newOrder.monoStyle);
-          console.log(newOrder.itemSymbol);
-          console.log(newOrder.itemText);
-          console.log(newOrder.quantity);
+          //   console.log(newOrder.itemName);
+          //   console.log(newOrder.itemCode);
+          //   console.log(newOrder.itemPrice);
+          //   console.log(newOrder.itemColor);
+          //   console.log(newOrder.monoStyle);
+          //   console.log(newOrder.itemSymbol);
+          //   console.log(newOrder.itemText);
+          //   console.log(newOrder.quantity);
 
           alert("Item Successfully Added");
 
-          $("#input-item").val("");
-          $("#input-code").val("");
-          $("#input-price").val("");
-          $("#input-color").val("");
-          $("#input-monoStyle").val("");
-          $("#input-symbol").val("");
-          $("#input-personalization").val("");
-          $("#input-quantity").val("");
+          loadDefaultOptions();
 
           return false;
 
       });
+
+      function loadDefaultOptions() {
+          $("#input-item").val("");
+          $("#input-code").val("");
+          $("#input-code").prop("disabled", true);
+          $("#input-price").val("");
+          $("#input-price").prop("disabled", true);
+          $("#input-color").val("");
+          $("#input-monoStyle").val("");
+          $("#input-symbol").val("");
+          $("#input-symbol").prop("disabled", true);
+          $("#input-personalization").val("");
+          $("#input-personalization").prop("disabled", true);
+          $("#input-quantity").val("");
+      }
 
       function lookupItemCode(itemName) {
           var PCode;
