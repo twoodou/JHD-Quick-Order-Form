@@ -23,6 +23,14 @@
   var traditionalSelected = false;
 
   $(document).ready(function () {
+      //   Color Dropdown
+      $("#input-color").on("change", function () {
+          var itemCodeColor = $("#input-color").val().split(",");
+          const currentItemCode = $("#input-code").val();
+          $("#input-code").empty();
+          $("#input-code").val(currentItemCode + itemCodeColor[1]);
+          console.log(availableProducts);
+      });
       //   Monogram Style Dropdown =-=-=-=-=-=-=-=-=-
       $("#input-monoStyle").on("change select", function () {
           var optionValue = $(this).val();
@@ -76,7 +84,7 @@
           //   var size = (UPs > 2 ? sizes[1] : sizes[0]);
       });
 
-      $("#input-item").on("select autocompleteselect change blur keyup", function () {
+      $("#input-item").on("change", function () {
           var itemName = $(this).val();
           lookupItemCode(itemName);
       });
@@ -203,10 +211,11 @@
                       $("#input-color").val("").prop("disabled", false);
                       lookupColors(itemName);
                   }
+                  lookupMonoStyles(itemName);
+                  lookupSymbols(itemName);
               }
           }
-          lookupMonoStyles(itemName);
-          lookupSymbols(itemName);
+
       }
 
       function lookupColors(itemName) {
@@ -226,6 +235,7 @@
               if (_.contains(womensLeatherColorsArray, splitItemName)) {
                   console.log("Women's Leather Colors");
                   colors = data.Colors[0].womensLeatherColors;
+                  console.log(colors);
                   $("#input-color").empty();
                   $.each(colors, function (index, value) {
                       $("#input-color").append($('<option>', {
@@ -435,10 +445,58 @@
               // console.log(data.Products);
               jsonData = data;
               for (let i = 0; i < data.Products.length; i++) {
-                  availableProducts.push(data.Products[i].productname);
+                  availableProducts.push({
+                      "productName": data.Products[i].productname,
+                      "productCode": data.Products[i].productcode
+                  });
               }
+
+            //   $('#autocomplete').autocomplete({
+            //     source: valuesArray,
+            //     focus: function( event, ui ) {
+            //         $('#div-id').val( ui.item.label );
+            //         return false;
+            //     },
+            //     select: function( event, ui ) {
+            //         //add your own action on item select!
+            //         $('#add-friend').val('');
+            //         return false;
+            //     }
+             
+            // })
+            // .data( "autocomplete" )._renderItem = function( ul, item ) {
+            //     //define renderer for list
+            // return $( "<li></li>" )
+            //         .data( "item.autocomplete", item )
+            //         .append( "<a>" + item.label + "</a>" )
+            //         .appendTo( ul );
+            // };
+              console.log(availableProducts);
               $("#input-item").autocomplete({
-                  source: availableProducts
+                  //   source: availableProducts.productName
+                  source: function (request, response) {
+                      response($.map(availableProducts, function (value, key) {
+                        //   console.log("response: " + value.productName);
+                          return {
+                              label: value.productName
+                          };
+                      }));
+                  },
+                  focus: function(event, ui) {
+                    $('#input-item').val(ui.value.label);
+                    return false;
+                },
+                  // Once a value in the drop down list is selected, do the following:
+                  select: function (event, ui) {
+                      console.log("ui: " + ui.item.label);
+                      $("#input-item").val(ui.item.label);
+                      $("#input-item").trigger("change");
+                      // place the person.given_name value into the textfield called 'select_origin'...
+                    //   $('#search').val(ui.item.first_name);
+                      // and place the person.id into the hidden textfield called 'link_origin_id'. 
+                    //   $('#link_origin_id').val(ui.item.id);
+                      return false;
+                  }
               });
           });
       }

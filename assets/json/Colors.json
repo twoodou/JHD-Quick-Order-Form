@@ -2,108 +2,108 @@
     "Colors": [
         {
             "vinylColors": {
-                "Black": "106",
-                "Burgundy": "108",
-                "Game Guard Camo": "184",
-                "Charcoal": "433",
-                "Coral": "110",
-                "Espresso": "111",
-                "French Blue": "112",
-                "Lilac": "354",
-                "Mint": "123",
-                "Moss": "411",
-                "Navy": "116",
-                "Ocean Blue": "117",
-                "Purple": "118",
-                "Red": "119",
-                "Rose": "420",
-                "Saddle": "120",
-                "Slate": "121",
-                "Tan": "122"
+                "Black": ["106", "VIBL"],
+                "Burgundy": ["108", "VIBU"],
+                "Game Guard Camo": ["184", "VICAMO"],
+                "Charcoal": ["433", "VICH"],
+                "Coral": ["110", "VICR"],
+                "Espresso": ["111", "VIES"],
+                "French Blue": ["112", "VIFB"],
+                "Lilac": ["354", "VILL"],
+                "Mint": ["123", "VIMI"],
+                "Moss": ["411", "VIMO"],
+                "Navy": ["116", "VINA"],
+                "Ocean Blue": ["117", "VIOB"],
+                "Purple": ["118", "VIPP"],
+                "Red": ["119", "VIRE"],
+                "Rose": ["420", "VIRO"],
+                "Saddle": ["120", "VISA"],
+                "Slate": ["121", "VISL"],
+                "Tan": ["122", "VITA"]
             },
 
             "leatherColors": {
-                "Black": "140",
-                "Bridle": "141",
-                "Caribbean": "142",
-                "Cherry": "143",
-                "Hot Pink": "145",
-                "Iris": "432",
-                "Kiwi": "144",
-                "Mahogany": "139",
-                "Natural": "138",
-                "Orange": "133",
-                "Pistachio": "329",
-                "Plum": "132",
-                "Royal Blue": "131",
-                "Salmon": "137",
-                "Shamrock": "134",
-                "Steel": "136",
-                "Wine": "135"
+                "Black": ["140", "LEBL"],
+                "Bridle": ["141", "NPBR"],
+                "Caribbean": ["142", "LECB"],
+                "Cherry": ["143", "LECH"],
+                "Hot Pink": ["145", "LEHP"],
+                "Iris": ["432", "LEIR"],
+                "Kiwi": ["144", "LEKI"],
+                "Mahogany": ["139", "LEMA"],
+                "Natural": ["138", "LENT"],
+                "Orange": ["133", "LEOR"],
+                "Pistachio": ["329", "LEPI"],
+                "Plum": ["132", "LEPL"],
+                "Royal Blue": ["131", "LERB"],
+                "Salmon": ["137", "LESM"],
+                "Shamrock": ["134", "LESH"],
+                "Steel": ["136", "LEST"],
+                "Wine": ["135", "LEWI"]
             },
 
             "huntingItemColors": {
-                "Black": "106",
-                "Espresso": "111",
-                "Game Guard Camo": "184",
-                "Khaki": "375",
-                "Olive": "266",
-                "Moss": "411",
-                "Saddle": "120",
-                "Tan": "122"
+                "Black": ["106", "VIBL"],
+                "Espresso": ["111", "VIES"],
+                "Game Guard Camo": ["184", "VICAMO"],
+                "Khaki": ["375", "CVKH"],
+                "Olive": ["266", "CVOL"],
+                "Moss": ["411", "VIMO"],
+                "Saddle": ["120", "VISA"],
+                "Tan": ["122", "VITA"]
             },
             "sandPrintedLiningColor": {
-                "Sand Printed Lining": "243"
+                "Sand Printed Lining": ["243", ""]
             },
             "blackLiningColor": {
-                "Black JH Print": "242"
+                "Black JH Print": ["242", ""]
             },
 
             "womensLeatherColors": {
-                "Amber": "186",
-                "Blonde": "185",
-                "Champagne": "353",
-                "Stout": "187"
+                "Amber": ["186", "LEAM"],
+                "Blonde": ["185", "LEBD"],
+                "Champagne": ["353", "LECP"],
+                "Stout": ["187", "LESO"]
             },
 
             "bocaChicaColors": {
-                "Black": "335",
-                "Coral": "338",
-                "Mint": "345",
-                "Ocean Blue": "347",
-                "Slate": "351"
+                "Black": ["335", "WEBL"],
+                "Coral": ["338", "WECR"],
+                "Mint": ["345", "WEMI"],
+                "Ocean Blue": ["347", "WEOB"],
+                "Slate": ["351", "WESL"]
             },
             "clearBackpackColors": {
-                "Black": "106",
-                "Lilac": "354",
-                "Mint": "123",
-                "Rose": "420",
-                "Saddle": "120",
-                "Slate": "351"
+                "Black": ["106", "VIBL"],
+                "Lilac": ["354", "VILL"],
+                "Mint": ["123", "VIMI"],
+                "Rose": ["420", "VIRO"],
+                "Saddle": ["120", "VISA"],
+                "Slate": ["121", "VISL"]
             },
             "bridleMahogany": {
-                "Bridle": "141",
-                "Mahogany": "139"
+                "Bridle": ["141", "NPBR"],
+                "Mahogany": ["139", "LEMA"]
             },
             "khakiOlive": {
-                "Khaki": "375",
-                "Olive": "266"
+                "Khaki": ["375", "CVKH"],
+                "Olive": ["266", "CVOL"]
             },
             "JHDoppKitColorsLeather": {
-                "Bourbon": "189",
-                "Midnight": "190"
+                "Bourbon": ["189", "CLBB"],
+                "Midnight": ["190", "CLMD"]
             },
             "joeDuffelColors": {
-                "Bridle": "141"
+                "Bridle": ["141", "NPBR"]
             },
             "highlandParkToteColors": {
-                "Black with Saddle Sides": "366",
-                "Burgundy with Saddle Sides": "372",
-                "Coral with Navy Sides": "364",
-                "Espresso with Saddle Sides": "373",
-                "Mint with Coral Sides": "363",
-                "Mint with Navy Sides": "368",
-                "Slate with Black Sides": "367"
+                "Black with Saddle Sides": ["366", "VIBL-SA"],
+                "Burgundy with Saddle Sides": ["372", "VIBU-SA"],
+                "Coral with Navy Sides": ["364", "VICR-NA"],
+                "Espresso with Saddle Sides": ["373", "VIES-SA"],
+                "Mint with Coral Sides": ["363", "VIMI-CR"],
+                "Mint with Navy Sides": ["368", "VIMI-NA"],
+                "Slate with Black Sides": ["367", "VISL-BL"]
             }
         }
     ]
